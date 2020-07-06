@@ -10,7 +10,12 @@ namespace Prework_CodeChallenges
             Console.WriteLine("Hello World!");
 
             //ArrayMaxResult();
-            LeapYearCalculator();
+            //LeapYearCalculator();
+            PerfectSequence(new int[2] { 2, 2 });
+            PerfectSequence(new int[3] { 1, 3, 2 });
+            PerfectSequence(new int[3] { 4, 5, 6 });
+            PerfectSequence(new int[3] { 0, 2, -2 });
+
         }
 
         // Challenge 1
@@ -64,7 +69,7 @@ namespace Prework_CodeChallenges
         }
 
         // Challenge 2
-        static void LeapYearCalculator()
+        static void LeapYearCalculator(int year)
         {
             /* PROBLEM STATEMENT
             Given a year, report if it is a leap year. The tricky thing here is that a leap year in the Gregorian calendar occurs:
@@ -79,22 +84,69 @@ namespace Prework_CodeChallenges
 
             Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.*/
 
-            Console.WriteLine("Enter a year.");
-            int year = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter a year.");
+            //int year = Convert.ToInt32(Console.ReadLine());
 
             if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) Console.WriteLine(year + " is a leap year!");
             else Console.WriteLine(year + " is not a leap year... ;(");
         }
 
         // Challenge 3
-        static void PerfectSequence()
+        static bool PerfectSequence(int[] array)
         {
+            /* PROBLEM STATEMENT
+            Given an array, return "Yes" if the sequence is considered a perfect sequence. Otherwise, return "No".
+
+            PERFECT SEQUENCE
+            A perfect sequence is a sequence such that all of its elements are non-negative integers and the product 
+            of all of them is equal to their sum. For example: [2,2], [1,3,2] and [0,0,0,0] are perfect sequences and 
+            [4,5,6] and [0,2,-2] are not perfect sequences. Negative numbers of any kind are not valid in a perfect sequence */
+
+            int product = 1;
+            int sum = 0;
+
+            Console.WriteLine("Checking if array is a perfect sequence...");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                {
+                    Console.WriteLine("Negative number found! This array is not a perfect sequence!\n");
+                    return false;
+                }
+
+                product *= array[i];
+                sum += array[i];
+                Console.WriteLine(array[i]);
+            }
+
+            if (product == sum)
+            {
+                Console.WriteLine("This array is a perfect sequence!\n");
+                return true;
+            }
+
+            Console.WriteLine("This array is not a perfect sequence!\n");
+            return false;
 
         }
 
         // Challenge 4
-        static void SumOfRows()
+        static void SumOfRows(int[,] matrix)
         {
+            /* PROBLEM STATEMENT
+            Problem Statement
+            Given a matrix of integers. Return the sum of each row in a single dimensional array.
+
+            INPUT FORMAT
+            a multidimensional array with the dimensions of m x n (m = rows, n = columns).
+
+            1. duplicate integers are possible.
+            2. Negative numbers are possible
+            3. both m and n can vary in length
+
+            The user should specify the length and the width of the array within the console. To populate the numbers, you may randomly generate them, or have the user input one by one.
+            The method should take in the multidimensional array and return the single dimensional array with the sum */
 
         }
     }
