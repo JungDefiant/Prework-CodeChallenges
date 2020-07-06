@@ -10,18 +10,18 @@ namespace Prework_CodeChallenges
         {
             Console.WriteLine("Hello World!");
 
-            //ArrayMaxResult();
+            ArrayMaxResult();
 
-            /* LeapYearCalculator(1996);
+            LeapYearCalculator(1996);
             LeapYearCalculator(2000);
             LeapYearCalculator(2004);
             LeapYearCalculator(1997);
             LeapYearCalculator(2001);
             LeapYearCalculator(2005);
             LeapYearCalculator(1000);
-            LeapYearCalculator(4000); */
+            LeapYearCalculator(4000);
 
-            /* if(PerfectSequence(new int[2] { 2, 2 })) Console.WriteLine("This array is a perfect sequence!\n");
+            if(PerfectSequence(new int[2] { 2, 2 })) Console.WriteLine("This array is a perfect sequence!\n");
             else Console.WriteLine("This array is NOT a perfect sequence!\n");
 
             if(PerfectSequence(new int[3] { 1, 3, 2 })) Console.WriteLine("This array is a perfect sequence!\n");
@@ -31,7 +31,7 @@ namespace Prework_CodeChallenges
             else Console.WriteLine("This array is NOT a perfect sequence!\n");
 
             if(PerfectSequence(new int[3] { 0, 2, -2 })) Console.WriteLine("This array is a perfect sequence!\n");
-            else Console.WriteLine("This array is NOT a perfect sequence!\n"); */
+            else Console.WriteLine("This array is NOT a perfect sequence!\n");
 
             int[] sumOfRows = SumOfRows();
             Console.WriteLine("\n\nSum Of Rows");
@@ -102,7 +102,7 @@ namespace Prework_CodeChallenges
 
             int finalScore = counter * numInput;
 
-            Console.WriteLine("Your score is " + finalScore);
+            Console.WriteLine("Your score is " + finalScore + "\n");
         }
 
         // Challenge 2
