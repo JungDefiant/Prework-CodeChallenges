@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace Prework_CodeChallenges
 {
@@ -10,11 +11,47 @@ namespace Prework_CodeChallenges
             Console.WriteLine("Hello World!");
 
             //ArrayMaxResult();
-            //LeapYearCalculator();
-            PerfectSequence(new int[2] { 2, 2 });
-            PerfectSequence(new int[3] { 1, 3, 2 });
-            PerfectSequence(new int[3] { 4, 5, 6 });
-            PerfectSequence(new int[3] { 0, 2, -2 });
+
+            /* LeapYearCalculator(1996);
+            LeapYearCalculator(2000);
+            LeapYearCalculator(2004);
+            LeapYearCalculator(1997);
+            LeapYearCalculator(2001);
+            LeapYearCalculator(2005);
+            LeapYearCalculator(1000);
+            LeapYearCalculator(4000); */
+
+            /* if(PerfectSequence(new int[2] { 2, 2 })) Console.WriteLine("This array is a perfect sequence!\n");
+            else Console.WriteLine("This array is NOT a perfect sequence!\n");
+
+            if(PerfectSequence(new int[3] { 1, 3, 2 })) Console.WriteLine("This array is a perfect sequence!\n");
+            else Console.WriteLine("This array is NOT a perfect sequence!\n");
+
+            if(PerfectSequence(new int[3] { 4, 5, 6 })) Console.WriteLine("This array is a perfect sequence!\n");
+            else Console.WriteLine("This array is NOT a perfect sequence!\n");
+
+            if(PerfectSequence(new int[3] { 0, 2, -2 })) Console.WriteLine("This array is a perfect sequence!\n");
+            else Console.WriteLine("This array is NOT a perfect sequence!\n"); */
+
+            int[] sumOfRows = SumOfRows();
+            Console.WriteLine("\n\nSum Of Rows");
+            for (int i = 0; i < sumOfRows.Length; i++) {
+                Console.WriteLine(sumOfRows[i]);
+            }
+
+            sumOfRows = SumOfRows();
+            Console.WriteLine("\n\nSum Of Rows");
+            for (int i = 0; i < sumOfRows.Length; i++)
+            {
+                Console.WriteLine(sumOfRows[i]);
+            }
+
+            sumOfRows = SumOfRows();
+            Console.WriteLine("\n\nSum Of Rows");
+            for (int i = 0; i < sumOfRows.Length; i++)
+            {
+                Console.WriteLine(sumOfRows[i]);
+            }
 
         }
 
@@ -111,7 +148,6 @@ namespace Prework_CodeChallenges
             {
                 if (array[i] < 0)
                 {
-                    Console.WriteLine("Negative number found! This array is not a perfect sequence!\n");
                     return false;
                 }
 
@@ -122,7 +158,7 @@ namespace Prework_CodeChallenges
 
             if (product == sum)
             {
-                Console.WriteLine("This array is a perfect sequence!\n");
+                
                 return true;
             }
 
@@ -132,10 +168,9 @@ namespace Prework_CodeChallenges
         }
 
         // Challenge 4
-        static void SumOfRows(int[,] matrix)
+        static int[] SumOfRows()
         {
             /* PROBLEM STATEMENT
-            Problem Statement
             Given a matrix of integers. Return the sum of each row in a single dimensional array.
 
             INPUT FORMAT
@@ -148,6 +183,42 @@ namespace Prework_CodeChallenges
             The user should specify the length and the width of the array within the console. To populate the numbers, you may randomly generate them, or have the user input one by one.
             The method should take in the multidimensional array and return the single dimensional array with the sum */
 
+            int length = 0, width = 0;
+
+            Console.WriteLine("\n\nSpecify the length of the array.");
+            while (length < 1)
+            {
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length < 1) Console.WriteLine("Invalid length entered.");
+            }
+
+            Console.WriteLine("Specify the width of the array.");
+            while (width < 1)
+            {
+                width = Convert.ToInt32(Console.ReadLine());
+                if (width < 1) Console.WriteLine("Invalid width entered.");
+            }
+
+            int[,] matrix = new int[length, width];
+            int[] sum = new int[length];
+
+            Console.WriteLine("Matrix is being randomized.");
+            Random rand = new Random();
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.WriteLine("\nRow " + i);
+
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rand.Next(-100, 100);
+                    sum[i] += matrix[i, j];
+
+                    Console.WriteLine(matrix[i, j]);
+                }
+            }
+
+            return sum;
         }
     }
 }
