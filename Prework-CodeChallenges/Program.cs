@@ -9,20 +9,22 @@ namespace Prework_CodeChallenges
         {
             Console.WriteLine("Hello World!");
 
-            ArrayMaxResult();
+            //ArrayMaxResult();
+            LeapYearCalculator();
         }
 
         // Challenge 1
-        static int ArrayMaxResult()
+        static void ArrayMaxResult()
         {
-            // Given an array select a number that exists, and output the computated "score". The method you create should take in both an array of integers 
-            // and the integer the user selected.
+            /* PROBLEM STATEMENT            
+            Given an array select a number that exists, and output the computated "score". The method you create should take in both an array of integers 
+            and the integer the user selected.
 
-            // Create a Console application that requests 5 numbers between 1 - 10 from the user. Output the array to the console and ask the user to select a number. 
-            // After the selection, output the "score" of the number chosen.
+            Create a Console application that requests 5 numbers between 1 - 10 from the user. Output the array to the console and ask the user to select a number. 
+            After the selection, output the "score" of the number chosen.
 
-            // You can select any number from the list, however your scoring will be depend on the frequency of that number in the list. E.g for [2,2,3,5,4] if you 
-            // pick 2 your score will be 4 (2 * 2) but if you pick 5 your score will be 5 (5 * 1)
+            You can select any number from the list, however your scoring will be depend on the frequency of that number in the list. E.g for [2,2,3,5,4] if you 
+            pick 2 your score will be 4 (2 * 2) but if you pick 5 your score will be 5 (5 * 1). */
 
             Console.WriteLine("Enter five numbers between 1 - 10.");
 
@@ -59,8 +61,41 @@ namespace Prework_CodeChallenges
             int finalScore = counter * numInput;
 
             Console.WriteLine("Your score is " + finalScore);
+        }
 
-            return 0;
+        // Challenge 2
+        static void LeapYearCalculator()
+        {
+            /* PROBLEM STATEMENT
+            Given a year, report if it is a leap year. The tricky thing here is that a leap year in the Gregorian calendar occurs:
+
+                on every year that is evenly divisible by 4
+                except every year that is evenly divisible by 100
+                unless the year is also evenly divisible by 400
+
+            For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.
+
+            Want to know more about Leap Year? Watch this 4 minute video HERE{:target = "_blank"}
+
+            Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.*/
+
+            Console.WriteLine("Enter a year.");
+            int year = Convert.ToInt32(Console.ReadLine());
+
+            if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) Console.WriteLine(year + " is a leap year!");
+            else Console.WriteLine(year + " is not a leap year... ;(");
+        }
+
+        // Challenge 3
+        static void PerfectSequence()
+        {
+
+        }
+
+        // Challenge 4
+        static void SumOfRows()
+        {
+
         }
     }
 }
