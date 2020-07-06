@@ -1,5 +1,8 @@
 # README
 
+## Attributions
+Converting from String to Int: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
+
 ## Challenge 1: Array Max Result
 ### Instructions
 Given an array select a number that exists, and output the computated "score". The method you create should take in both an array of integers and the integer the user selected.
